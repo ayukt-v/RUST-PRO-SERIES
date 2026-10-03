@@ -1,0 +1,132 @@
+What is Rust?
+Rust is a modern programming language.
+It is designed for performance, reliability, and safety - especially safe handling of memory.
+
+Why Learn Rust?
+1.Rust is very fast.
+2.Rust requires less memory compared to many other languages.
+3.Rust is used to build web servers, creating games, operating systems, and much more.
+
+Difference between Rust and C\C++ ?
+1.The main difference is that Rust is "safe by default".
+2.In Rust, memory access is automatically checked by the compiler, 
+  which helps you avoid common bugs like crashes, leaks, and unsafe memory behavior.
+3.In C and C++, you must manually manage memory, which can lead to errors if you are not careful.
+
+
+
+
+
+
+Installing rustup on Linux or macOS.
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+
+
+Run this command to configure your current shell environment, or restart your terminal:
+source "$HOME/.cargo/env"
+
+
+
+On macOS, you can get a C compiler by running:
+xcode-select --install
+
+
+
+Installing rustup on Windows
+On Windows, go to https://www.rust-lang.org/tools/install and follow the instructions for installing Rust. At some point in the installation, you’ll be prompted to install Visual Studio. This provides a linker and the native libraries needed to compile programs. If you need more help with this step, see https://rust-lang.github.io/rustup/installation/windows-msvc.html.
+The rest of this book uses commands that work in both cmd.exe and PowerShell. If there are specific differences, we’ll explain which to use.
+
+
+
+To check whether you have Rust installed correctly, open a shell and enter this line:
+rustc --version
+
+
+You should see the version number, commit hash, and commit date for the latest stable version that has been released, in the following format:
+rustc x.y.z (abcabcabc yyyy-mm-dd)
+
+
+If you see this information, you have installed Rust successfully! If you don’t see this information, check that Rust is in your %PATH% system variable as follows.
+In Windows CMD, use:
+> echo %PATH%
+
+In PowerShell, use:
+> echo $env:Path
+
+In Linux and macOS, use:
+echo $PATH
+
+
+
+Updating and Uninstalling
+rustup update
+rustup self uninstall
+
+
+Reading the Local Documentation
+rustup doc
+
+
+Some Rust Package.
+cargo new get-dependencies
+cd get-dependencies
+ cargo add rand@0.8.5 trpl@0.2.0
+
+
+This will cache the downloads for these packages so you will not need to download them later. Once you have run this command, you do not need to keep the get-dependencies folder. If you have run this command, you can use the --offline flag with all cargo commands in the rest of the book to use these cached versions instead of attempting to use the network.
+
+
+The Rust team has been focusing on enabling great IDE support via 
+rust-analyzer
+
+
+Project Directory Setup
+For Linux, macOS, and PowerShell on Windows, enter this:
+mkdir ~/folder_name
+
+
+Go in folder.
+cd ~/projects
+
+
+For Windows CMD, enter this:
+mkdir "%USERPROFILE%\projects"
+cd /d "%USERPROFILE%\projects"
+
+
+
+Save the file and go back to your terminal window in the ~/projects/hello_world directory. On Linux or macOS, enter the following commands to compile and run the file:
+rustc file_name.rs
+
+To run:
+./file_name
+
+
+For Standard format
+rustfmt file_name.rs
+
+
+Create a New Project
+Use Cargo to create a new Rust project:
+cargo new my_project
+
+The output will look something like this:
+ Creating binary (application) `my_project` package
+note: see more `Cargo.toml` keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+This creates a folder called my_project with the following files:
+1.Cargo.toml: Project settings
+2.src/main.rs: Main Rust file
+
+
+
+Build and Run the Project
+Next, write the following code to go into the project folder:
+cd my_project
+
+Then build and run the project:
+cargo run
+
+The output should be:
+Hello, world!
+
